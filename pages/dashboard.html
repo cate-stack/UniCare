@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | UniCare</title>
+
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-icon">+</span>
+            <span>UniCare</span>
+        </div>
+
+        <p class="sidebar-label">MAIN MENU</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="appointments.html">
+                <span>▦</span> Appointments
+            </a>
+
+            <a href="medication.html">
+                <span>✚</span> Medication
+            </a>
+
+            <a href="screening.html">
+                <span>♡</span> Health Screening
+            </a>
+
+            <a href="messages.html">
+                <span>✉</span> Messages
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <p class="sidebar-label">ACCOUNT</p>
+
+            <a href="#" id="logoutButton">
+                <span>↪</span> Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN DASHBOARD CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Student Dashboard</h1>
+                <p class="dashboard-date" id="currentDate"></p>
+            </div>
+
+            <div class="profile-summary">
+
+                <div class="profile-avatar" id="profileInitial">
+                    S
+                </div>
+
+                <div>
+                    <h4 id="profileName">Student</h4>
+                    <p>Student Account</p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+
+        <section class="welcome-banner">
+
+            <div>
+                <p class="welcome-small">UNICARE STUDENT PORTAL</p>
+
+                <h2 id="welcomeName">Welcome Back!</h2>
+
+                <p>
+                    Manage your healthcare appointments and access
+                    your dispensary services conveniently.
+                </p>
+            </div>
+
+            <div class="welcome-icon">✚</div>
+
+        </section>
+
+
+        <!-- STUDENT INFORMATION -->
+
+        <section class="student-info-card">
+
+            <div>
+                <span class="info-label">STUDENT NUMBER</span>
+                <h3 id="studentNumber">Not available</h3>
+            </div>
+
+            <div>
+                <span class="info-label">PROGRAMME</span>
+                <h3 id="studentCourse">Not available</h3>
+            </div>
+
+            <div>
+                <span class="info-label">YEAR OF STUDY</span>
+                <h3 id="studentYear">Not available</h3>
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Healthcare Overview</h2>
+                <p>Your healthcare activity at a glance.</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card dashboard-stat">
+                    <div class="stat-icon blue">▦</div>
+                    <h3>Total Appointments</h3>
+                    <p id="totalAppointments">0</p>
+                    <span>All your bookings</span>
+                </div>
+
+                <div class="stat-card dashboard-stat">
+                    <div class="stat-icon green">✓</div>
+                    <h3>Upcoming Appointments</h3>
+                    <p id="upcomingAppointments">0</p>
+                    <span>Pending or confirmed</span>
+                </div>
+
+                <div class="stat-card dashboard-stat">
+                    <div class="stat-icon orange">✚</div>
+                    <h3>Active Prescriptions</h3>
+                    <p id="activePrescriptions">0</p>
+                    <span>Current medication records</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Quick Actions</h2>
+                <p>Access frequently used healthcare services.</p>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="appointments.html" class="action-card">
+                    <div class="action-icon">▦</div>
+                    <h3>Book Appointment</h3>
+                    <p>Schedule a visit to the dispensary.</p>
+                    <span>Get started →</span>
+                </a>
+
+                <a href="medication.html" class="action-card">
+                    <div class="action-icon">✚</div>
+                    <h3>My Medication</h3>
+                    <p>View your prescribed medication.</p>
+                    <span>View records →</span>
+                </a>
+
+                <a href="screening.html" class="action-card">
+                    <div class="action-icon">♡</div>
+                    <h3>Health Screening</h3>
+                    <p>Complete your health questionnaire.</p>
+                    <span>Start screening →</span>
+                </a>
+
+                <a href="messages.html" class="action-card">
+                    <div class="action-icon">✉</div>
+                    <h3>Messages</h3>
+                    <p>Communicate with healthcare staff.</p>
+                    <span>Open messages →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT APPOINTMENTS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading appointment-heading">
+
+                <div>
+                    <h2>Recent Appointments</h2>
+                    <p>Your latest appointment records.</p>
+                </div>
+
+                <a href="appointments.html" class="view-all">
+                    View All →
+                </a>
+
+            </div>
+
+            <div class="content-card">
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="appointmentTable">
+
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    No appointments have been booked yet.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+            <p>
+                © 2026 UniCare University Dispensary Management System.
+                All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

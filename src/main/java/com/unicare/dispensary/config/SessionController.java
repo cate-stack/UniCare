@@ -1,0 +1,3 @@
+package com.unicare.dispensary.config;
+import jakarta.servlet.http.HttpServletRequest;import jakarta.servlet.http.HttpServletResponse;import org.springframework.security.core.Authentication;import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;import org.springframework.web.bind.annotation.*;
+@RestController public class SessionController{private final SecurityContextLogoutHandler logout=new SecurityContextLogoutHandler();@PostMapping("/api/auth/logout")public java.util.Map<String,String> logout(HttpServletRequest request,HttpServletResponse response,Authentication authentication){logout.logout(request,response,authentication);return java.util.Map.of("message","Logged out successfully.");}}

@@ -1,0 +1,1 @@
+package com.unicare.dispensary.message;import java.util.List;import org.springframework.data.jpa.repository.JpaRepository;public interface MessageRepository extends JpaRepository<DispensaryMessage,Long>{List<DispensaryMessage> findByStudentIdOrderByCreatedAtDesc(Long studentId);List<DispensaryMessage> findAllByOrderByCreatedAtDesc();}

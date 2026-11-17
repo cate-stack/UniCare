@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Dispensary System | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-info">
+            <div class="brand">
+                <span class="brand-icon">+</span>
+                <span>UniCare</span>
+            </div>
+
+            <h1>University Dispensary Management System</h1>
+
+            <p>
+                Your university healthcare services, appointments
+                and medication information in one place.
+            </p>
+
+            <div class="info-points">
+                <p>✓ Easy appointment booking</p>
+                <p>✓ Access to medication information</p>
+                <p>✓ Convenient communication with healthcare staff</p>
+                <p>✓ Secure student healthcare records</p>
+            </div>
+        </div>
+
+        <div class="auth-form-container">
+
+            <div class="auth-form">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Sign in to access your account.</p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your university email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="primary-btn">
+                        Sign In
+                    </button>
+
+                    <p id="loginMessage" class="message"></p>
+
+                    <p class="field-note">Staff accounts are provisioned by the dispensary administrator.</p>
+                </form>
+
+                <p class="register-link">
+                    Don't have an account?
+                    <a href="pages/register.html">Register here</a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/auth.js?v=4"></script>
+</body>
+</html>

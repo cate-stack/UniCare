@@ -1,0 +1,1 @@
+package com.unicare.dispensary.message;public enum MessageStatus{OPEN,REPLIED,CLOSED;@com.fasterxml.jackson.annotation.JsonValue public String json(){return name().charAt(0)+name().substring(1).toLowerCase(java.util.Locale.ROOT);}}

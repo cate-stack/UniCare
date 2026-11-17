@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Management | UniCare</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-icon">+</span>
+            <span>UniCare</span>
+        </div>
+
+        <p class="sidebar-label">MAIN MENU</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="appointments.html" class="active">
+                <span>▦</span> Appointments
+            </a>
+
+            <a href="medication.html">
+                <span>✚</span> Medication
+            </a>
+
+            <a href="screening.html">
+                <span>♡</span> Health Screening
+            </a>
+
+            <a href="messages.html">
+                <span>✉</span> Messages
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p class="sidebar-label">ACCOUNT</p>
+            <a href="#" id="logoutButton">
+                <span>↪</span> Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Appointment Management</h1>
+                <p class="dashboard-date">
+                    Book and manage your healthcare appointments.
+                </p>
+            </div>
+
+            <div class="profile-summary">
+                <div class="profile-avatar" id="profileInitial">S</div>
+                <div>
+                    <h4 id="profileName">Student</h4>
+                    <p>Student Account</p>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="appointment-banner">
+            <div>
+                <h2>Your Healthcare Matters</h2>
+                <p>
+                    Schedule a consultation with the university
+                    dispensary and keep track of your appointments.
+                </p>
+            </div>
+            <div class="appointment-banner-icon">▦</div>
+        </section>
+
+
+        <!-- APPOINTMENT STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card dashboard-stat">
+                <div class="stat-icon blue">▦</div>
+                <h3>Total Bookings</h3>
+                <p id="totalBookings">0</p>
+                <span>All appointment records</span>
+            </div>
+
+            <div class="stat-card dashboard-stat">
+                <div class="stat-icon orange">◷</div>
+                <h3>Pending</h3>
+                <p id="pendingBookings">0</p>
+                <span>Awaiting staff approval</span>
+            </div>
+
+            <div class="stat-card dashboard-stat">
+                <div class="stat-icon green">✓</div>
+                <h3>Confirmed</h3>
+                <p id="confirmedBookings">0</p>
+                <span>Approved appointments</span>
+            </div>
+
+        </section>
+
+
+        <!-- BOOK APPOINTMENT FORM -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Book a New Appointment</h2>
+                <p>Complete the form below to request an appointment.</p>
+            </div>
+
+            <div class="content-card appointment-form-card">
+
+                <form id="appointmentForm">
+
+                    <div class="registration-grid">
+
+                        <div class="form-group">
+                            <label for="appointmentService">
+                                Healthcare Service *
+                            </label>
+
+                            <select id="appointmentService" required>
+                                <option value="">Select a service</option>
+                                <option value="General Consultation">
+                                    General Consultation
+                                </option>
+                                <option value="Medical Examination">
+                                    Medical Examination
+                                </option>
+                                <option value="First Aid">
+                                    First Aid
+                                </option>
+                                <option value="Laboratory Services">
+                                    Laboratory Services
+                                </option>
+                                <option value="Family Planning">
+                                    Family Planning
+                                </option>
+                                <option value="Mental Health Consultation">
+                                    Mental Health Consultation
+                                </option>
+                                <option value="Follow-up Consultation">
+                                    Follow-up Consultation
+                                </option>
+                                <option value="Other">
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="appointmentDate">
+                                Preferred Appointment Date *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="appointmentDate"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="appointmentTime">
+                                Preferred Appointment Time *
+                            </label>
+
+                            <select id="appointmentTime" required>
+                                <option value="">Select a time</option>
+                                <option value="08:00">8:00 AM</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="appointmentType">
+                                Visit Type *
+                            </label>
+
+                            <select id="appointmentType" required>
+                                <option value="">Select visit type</option>
+                                <option value="New Consultation">
+                                    New Consultation
+                                </option>
+                                <option value="Follow-up Visit">
+                                    Follow-up Visit
+                                </option>
+                                <option value="Routine Check-up">
+                                    Routine Check-up
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="appointmentReason">
+                            Reason for Appointment *
+                        </label>
+
+                        <textarea
+                            id="appointmentReason"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Briefly explain the reason for your visit..."
+                            required
+                        ></textarea>
+
+                        <small class="field-note">
+                            Do not include emergency symptoms here.
+                            Seek immediate medical assistance for emergencies.
+                        </small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="additionalNotes">
+                            Additional Notes (Optional)
+                        </label>
+
+                        <textarea
+                            id="additionalNotes"
+                            rows="3"
+                            maxlength="300"
+                            placeholder="Any additional information for the dispensary..."
+                        ></textarea>
+                    </div>
+
+
+                    <button type="submit" class="primary-btn">
+                        Submit Appointment Request
+                    </button>
+
+                    <p id="appointmentMessage" class="message"></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPOINTMENT HISTORY -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading appointment-heading">
+                <div>
+                    <h2>My Appointments</h2>
+                    <p>Review and manage your appointment records.</p>
+                </div>
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="appointment-filter">
+
+                <label for="statusFilter">Filter by status:</label>
+
+                <select id="statusFilter">
+                    <option value="All">All Appointments</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Reschedule Requested">
+                        Reschedule Requested
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="appointmentsTableBody">
+
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    Your appointment records will appear here.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+            <p>
+                © 2026 UniCare University Dispensary Management System.
+            </p>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- RESCHEDULE MODAL -->
+
+<div id="rescheduleModal" class="modal-overlay">
+
+    <div class="modal-card">
+
+        <div class="modal-heading">
+            <h2>Request Rescheduling</h2>
+            <button type="button" id="closeModal" class="modal-close">
+                &times;
+            </button>
+        </div>
+
+        <p class="form-subtitle">
+            Choose your preferred new appointment date and time.
+            Staff will review your request.
+        </p>
+
+        <form id="rescheduleForm">
+
+            <input type="hidden" id="rescheduleAppointmentId">
+
+            <div class="form-group">
+                <label for="newAppointmentDate">New Date *</label>
+                <input
+                    type="date"
+                    id="newAppointmentDate"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="newAppointmentTime">New Time *</label>
+
+                <select id="newAppointmentTime" required>
+                    <option value="">Select a time</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                </select>
+            </div>
+
+            <button type="submit" class="primary-btn">
+                Submit Rescheduling Request
+            </button>
+
+            <p id="rescheduleMessage" class="message"></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../js/appointment.js"></script>
+
+</body>
+</html>
